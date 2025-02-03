@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="User Registration Tests">
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="C:/Users/HP/Documents/AtomationFrameWork/src/test/java/TestCases">
         <classes>
-            <class name="TestCases.RegistrationTest"/>
-            <class name="TestCases.PlaceOrderTest"></class>
+            <class name="TestCases.RegistrationTest">
+                <methods>
+                    <include name="testWebPageOpen"/>
+                    <include name="isRegistrationPageOpen"/>
+                    <include name="testUserRegistration"/>
+                </methods>
+            </class>
+            <class name="TestCases.PlaceOrderTest">
+                <methods>
+                    <include name="testWebPageOpen"/>
+                    <include name="successfulOrderPlacementTest"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
